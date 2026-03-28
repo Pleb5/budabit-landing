@@ -4,14 +4,14 @@ interface BudaBitIconProps {
   className?: string;
 }
 
-/** A small inline BudaBit logo icon using the logo-mark image. */
+/** A small inline BudaBit campfire icon. Inverts to white for the dark theme. */
 export function BudaBitIcon({ className }: BudaBitIconProps) {
   return (
     <img
-      src="/images/logo-mark.png"
+      src="/images/budabit-icon.png"
       alt=""
       aria-hidden="true"
-      className={cn('inline-block h-4 w-4 object-contain', className)}
+      className={cn('inline-block h-4 w-4 object-contain invert', className)}
     />
   );
 }
