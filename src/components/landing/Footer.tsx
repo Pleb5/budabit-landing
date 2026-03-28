@@ -9,7 +9,7 @@ export function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Brand */}
           <div className="flex items-center gap-3">
-            <img src="/images/logo-mark.png" alt="BudaBit" className="h-8 w-8" />
+            <img src="/images/budabit-logo.svg" alt="BudaBit" className="h-8 w-auto" />
             <span className="font-bold text-lg tracking-tight">BudaBit</span>
           </div>
 
