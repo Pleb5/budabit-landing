@@ -1,7 +1,9 @@
 import { useScrollReveal } from './useScrollReveal';
 import { cn } from '@/lib/utils';
-import { Code2, BookOpen, Github } from 'lucide-react';
+import { Code2, BookOpen } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { BudaBitIcon } from './BudaBitIcon';
+import { BUDABIT_REPO_URL, INTEROP_GUIDE_URL } from './constants';
 
 export function OpenSourceSection() {
   const [ref, isVisible] = useScrollReveal<HTMLDivElement>();
@@ -69,8 +71,8 @@ export function OpenSourceSection() {
               size="lg"
               className="h-12 px-6 rounded-xl border-border/50 hover:border-primary/40 hover:bg-primary/5 transition-all"
             >
-              <a href="https://github.com/Pleb5/flotilla-budabit" target="_blank" rel="noopener noreferrer">
-                <Github className="mr-2 h-5 w-5" />
+              <a href={BUDABIT_REPO_URL} target="_blank" rel="noopener noreferrer">
+                <BudaBitIcon className="mr-2 h-5 w-5" />
                 Browse the Code
               </a>
             </Button>
@@ -80,7 +82,7 @@ export function OpenSourceSection() {
               size="lg"
               className="h-12 px-6 rounded-xl border-border/50 hover:border-primary/40 hover:bg-primary/5 transition-all"
             >
-              <a href="https://habla.news/u/hodlbod@coracle.social/1741286140797" target="_blank" rel="noopener noreferrer">
+              <a href={INTEROP_GUIDE_URL} target="_blank" rel="noopener noreferrer">
                 <BookOpen className="mr-2 h-5 w-5" />
                 Interoperability Guide
               </a>

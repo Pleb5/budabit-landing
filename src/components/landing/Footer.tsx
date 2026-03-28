@@ -1,4 +1,6 @@
-import { Github, ExternalLink } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
+import { BudaBitIcon } from './BudaBitIcon';
+import { BUDABIT_REPO_URL, BUDABIT_COMMUNITY_URL, INTEROP_GUIDE_URL } from './constants';
 
 export function Footer() {
   return (
@@ -14,7 +16,7 @@ export function Footer() {
           {/* Links */}
           <div className="flex items-center gap-6 text-sm text-muted-foreground">
             <a
-              href="https://budabit.club"
+              href={BUDABIT_COMMUNITY_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1.5 hover:text-primary transition-colors"
@@ -23,16 +25,16 @@ export function Footer() {
               Community
             </a>
             <a
-              href="https://github.com/Pleb5/flotilla-budabit"
+              href={BUDABIT_REPO_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1.5 hover:text-primary transition-colors"
             >
-              <Github className="h-3.5 w-3.5" />
-              GitHub
+              <BudaBitIcon className="h-3.5 w-3.5" />
+              Repo
             </a>
             <a
-              href="https://habla.news/u/hodlbod@coracle.social/1741286140797"
+              href={INTEROP_GUIDE_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-primary transition-colors"

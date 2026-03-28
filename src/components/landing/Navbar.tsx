@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
-import { Github, ExternalLink, Menu, X } from 'lucide-react';
+import { ExternalLink, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { BudaBitIcon } from './BudaBitIcon';
+import { BUDABIT_REPO_URL, BUDABIT_COMMUNITY_URL } from './constants';
 
 const navLinks = [
   { label: 'Features', href: '#features' },
@@ -63,9 +65,9 @@ export function Navbar() {
               size="sm"
               className="text-muted-foreground hover:text-foreground"
             >
-              <a href="https://github.com/Pleb5/flotilla-budabit" target="_blank" rel="noopener noreferrer">
-                <Github className="mr-1.5 h-4 w-4" />
-                GitHub
+              <a href={BUDABIT_REPO_URL} target="_blank" rel="noopener noreferrer">
+                <BudaBitIcon className="mr-1.5 h-4 w-4" />
+                Repo
               </a>
             </Button>
             <Button
@@ -73,7 +75,7 @@ export function Navbar() {
               size="sm"
               className="rounded-xl bg-primary text-primary-foreground hover:bg-primary/90 shadow-sm shadow-primary/20"
             >
-              <a href="https://budabit.club" target="_blank" rel="noopener noreferrer">
+              <a href={BUDABIT_COMMUNITY_URL} target="_blank" rel="noopener noreferrer">
                 <ExternalLink className="mr-1.5 h-4 w-4" />
                 Open App
               </a>
@@ -116,9 +118,9 @@ export function Navbar() {
               size="sm"
               className="flex-1 rounded-xl"
             >
-              <a href="https://github.com/Pleb5/flotilla-budabit" target="_blank" rel="noopener noreferrer">
-                <Github className="mr-1.5 h-4 w-4" />
-                GitHub
+              <a href={BUDABIT_REPO_URL} target="_blank" rel="noopener noreferrer">
+                <BudaBitIcon className="mr-1.5 h-4 w-4" />
+                Repo
               </a>
             </Button>
             <Button
@@ -126,7 +128,7 @@ export function Navbar() {
               size="sm"
               className="flex-1 rounded-xl bg-primary text-primary-foreground hover:bg-primary/90"
             >
-              <a href="https://budabit.club" target="_blank" rel="noopener noreferrer">
+              <a href={BUDABIT_COMMUNITY_URL} target="_blank" rel="noopener noreferrer">
                 <ExternalLink className="mr-1.5 h-4 w-4" />
                 Open App
               </a>

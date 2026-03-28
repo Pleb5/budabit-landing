@@ -1,7 +1,9 @@
 import { useScrollReveal } from './useScrollReveal';
 import { cn } from '@/lib/utils';
-import { ArrowRight, ExternalLink, Github } from 'lucide-react';
+import { ArrowRight, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { BudaBitIcon } from './BudaBitIcon';
+import { BUDABIT_REPO_URL, BUDABIT_COMMUNITY_URL } from './constants';
 
 export function CTASection() {
   const [ref, isVisible] = useScrollReveal<HTMLDivElement>();
@@ -39,7 +41,7 @@ export function CTASection() {
               size="lg"
               className="h-14 px-8 text-base font-semibold rounded-2xl bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/20 transition-all hover:shadow-xl hover:shadow-primary/30 hover:scale-[1.02]"
             >
-              <a href="https://budabit.club" target="_blank" rel="noopener noreferrer">
+              <a href={BUDABIT_COMMUNITY_URL} target="_blank" rel="noopener noreferrer">
                 <ExternalLink className="mr-2 h-5 w-5" />
                 Visit budabit.club
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -51,9 +53,9 @@ export function CTASection() {
               size="lg"
               className="h-14 px-8 text-base font-semibold rounded-2xl border-border/50 hover:border-primary/40 hover:bg-primary/5 transition-all hover:scale-[1.02]"
             >
-              <a href="https://github.com/Pleb5/flotilla-budabit" target="_blank" rel="noopener noreferrer">
-                <Github className="mr-2 h-5 w-5" />
-                Star on GitHub
+              <a href={BUDABIT_REPO_URL} target="_blank" rel="noopener noreferrer">
+                <BudaBitIcon className="mr-2 h-5 w-5" />
+                View on BudaBit
               </a>
             </Button>
           </div>
