@@ -35,9 +35,9 @@ export function Navbar() {
           {/* Logo */}
           <a href="#" className="flex items-center gap-2.5 group">
             <img
-              src="/images/logo-mark.png"
+              src="/images/budabit-icon.png"
               alt="BudaBit"
-              className="h-8 w-8 transition-transform group-hover:scale-105"
+              className="h-8 w-8 transition-transform group-hover:scale-105 invert"
             />
             <span className="font-bold text-xl tracking-tight">
               Buda<span className="text-primary">Bit</span>
