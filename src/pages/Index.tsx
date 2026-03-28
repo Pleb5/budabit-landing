@@ -1,23 +1,39 @@
 import { useSeoMeta } from '@unhead/react';
-
-// FIXME: Update this page (the content is just a fallback if you fail to update the page)
+import { Navbar } from '@/components/landing/Navbar';
+import { HeroSection } from '@/components/landing/HeroSection';
+import { ProblemSection } from '@/components/landing/ProblemSection';
+import { PillarsSection } from '@/components/landing/PillarsSection';
+import { HowItWorksSection } from '@/components/landing/HowItWorksSection';
+import { FeaturesGrid } from '@/components/landing/FeaturesGrid';
+import { ExtensionsSection } from '@/components/landing/ExtensionsSection';
+import { OpenSourceSection } from '@/components/landing/OpenSourceSection';
+import { CTASection } from '@/components/landing/CTASection';
+import { Footer } from '@/components/landing/Footer';
 
 const Index = () => {
   useSeoMeta({
-    title: 'Welcome to Your Blank App',
-    description: 'A modern Nostr client application built with React, TailwindCSS, and Nostrify.',
+    title: 'BudaBit — Your Code. Your Group. Your Rules.',
+    description: 'A Discord-like collaboration platform for developers built on Nostr. Private group chat, issue tracking, pull requests, and repo management — no platform lock-in, every interaction cryptographically signed.',
   });
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-900">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4 text-gray-900 dark:text-gray-100">
-          Welcome to Your Blank App
-        </h1>
-        <p className="text-xl text-gray-600 dark:text-gray-400">
-          Start building your amazing project here!
-        </p>
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+      <Navbar />
+      <HeroSection />
+      <ProblemSection />
+      <PillarsSection />
+      <div id="how-it-works">
+        <HowItWorksSection />
       </div>
+      <div id="features">
+        <FeaturesGrid />
+      </div>
+      <div id="extensions">
+        <ExtensionsSection />
+      </div>
+      <OpenSourceSection />
+      <CTASection />
+      <Footer />
     </div>
   );
 };
