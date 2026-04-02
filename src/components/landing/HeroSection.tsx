@@ -2,6 +2,7 @@ import { ArrowRight, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { BudaBitIcon } from './BudaBitIcon';
 import { BUDABIT_REPO_URL, BUDABIT_COMMUNITY_URL } from './constants';
+import { ResponsiveScreenshot } from './ResponsiveScreenshot';
 
 export function HeroSection() {
   return (
@@ -21,8 +22,8 @@ export function HeroSection() {
         className="absolute inset-0 -z-10 animate-grid-fade"
         style={{
           backgroundImage: `
-            linear-gradient(hsl(174 72% 56% / 0.05) 1px, transparent 1px),
-            linear-gradient(90deg, hsl(174 72% 56% / 0.05) 1px, transparent 1px)
+            linear-gradient(hsl(45 66% 54% / 0.06) 1px, transparent 1px),
+            linear-gradient(90deg, hsl(18 82% 56% / 0.045) 1px, transparent 1px)
           `,
           backgroundSize: '64px 64px',
         }}
@@ -87,7 +88,7 @@ export function HeroSection() {
             className="flex flex-wrap items-center justify-center gap-3 mt-12 opacity-0 animate-fade-in"
             style={{ animationDelay: '0.5s' }}
           >
-            {['Nostr Protocol', 'End-to-End Encryption', 'Git Native', 'Bitcoin Payments'].map((label) => (
+            {['Nostr Protocol', 'Git Native', 'Cashu eCash', 'Lightning zaps'].map((label) => (
               <span
                 key={label}
                 className="px-3 py-1.5 rounded-lg bg-secondary/60 text-muted-foreground text-xs font-mono tracking-wide border border-border/40"
@@ -95,6 +96,28 @@ export function HeroSection() {
                 {label}
               </span>
             ))}
+          </div>
+
+          <div
+            className="relative mt-14 opacity-0 animate-fade-in-up"
+            style={{ animationDelay: '0.4s' }}
+          >
+            <div className="absolute inset-x-10 top-10 h-40 rounded-full bg-primary/20 blur-3xl" />
+            <div className="relative overflow-hidden rounded-[2rem] border border-primary/20 bg-card/80 shadow-2xl shadow-black/40 backdrop-blur-sm">
+              <div className="flex items-center gap-2 border-b border-border/60 bg-background/80 px-4 py-3 text-[11px] font-mono uppercase tracking-[0.24em] text-muted-foreground sm:px-5">
+                <span className="h-2.5 w-2.5 rounded-full bg-primary/90" />
+                <span className="h-2.5 w-2.5 rounded-full bg-secondary" />
+                <span className="h-2.5 w-2.5 rounded-full bg-foreground/30" />
+                <span className="ml-2 truncate">Sovereign repo collaboration</span>
+              </div>
+
+              <ResponsiveScreenshot
+                desktopSrc="/images/screenshots/repo-overview-desktop.png"
+                mobileSrc="/images/screenshots/repo-overview-mobile.png"
+                alt="BudaBit repository overview showing branches, maintainers, issues, patches, and portable clone URLs."
+                imageClassName="w-full h-auto object-top"
+              />
+            </div>
           </div>
         </div>
       </div>

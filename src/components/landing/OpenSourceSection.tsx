@@ -1,9 +1,9 @@
 import { useScrollReveal } from './useScrollReveal';
 import { cn } from '@/lib/utils';
-import { Code2, BookOpen } from 'lucide-react';
+import { Code2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { BudaBitIcon } from './BudaBitIcon';
-import { BUDABIT_REPO_URL, INTEROP_GUIDE_URL } from './constants';
+import { BUDABIT_REPO_URL } from './constants';
 
 export function OpenSourceSection() {
   const [ref, isVisible] = useScrollReveal<HTMLDivElement>();
@@ -60,8 +60,8 @@ export function OpenSourceSection() {
 
           <div
             className={cn(
-              "flex flex-col sm:flex-row items-center justify-center gap-4 transition-all duration-700",
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              'flex items-center justify-center transition-all duration-700',
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
             )}
             style={{ transitionDelay: isVisible ? '400ms' : '0ms' }}
           >
@@ -74,17 +74,6 @@ export function OpenSourceSection() {
               <a href={BUDABIT_REPO_URL} target="_blank" rel="noopener noreferrer">
                 <BudaBitIcon className="mr-2 h-5 w-5" />
                 Browse the Code
-              </a>
-            </Button>
-            <Button
-              asChild
-              variant="outline"
-              size="lg"
-              className="h-12 px-6 rounded-xl border-border/50 hover:border-primary/40 hover:bg-primary/5 transition-all"
-            >
-              <a href={INTEROP_GUIDE_URL} target="_blank" rel="noopener noreferrer">
-                <BookOpen className="mr-2 h-5 w-5" />
-                Interoperability Guide
               </a>
             </Button>
           </div>

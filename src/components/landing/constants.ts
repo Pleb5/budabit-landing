@@ -4,6 +4,3 @@ export const BUDABIT_REPO_URL =
 
 /** The BudaBit community app. */
 export const BUDABIT_COMMUNITY_URL = 'https://budabit.club';
-
-/** The Flotilla interoperability guide. */
-export const INTEROP_GUIDE_URL = 'https://habla.news/u/hodlbod@coracle.social/1741286140797';

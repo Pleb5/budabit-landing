@@ -1,31 +1,37 @@
 import { useScrollReveal } from './useScrollReveal';
 import { cn } from '@/lib/utils';
+import { ResponsiveScreenshot } from './ResponsiveScreenshot';
 
 const pillars = [
   {
-    image: '/images/feature-private-group.webp',
+    desktopImage: '/images/screenshots/chat-room-desktop.png',
+    mobileImage: '/images/screenshots/chat-room-mobile.png',
+    imageAlt: 'BudaBit chat room showing contributor discussion and community coordination.',
     label: 'Private Group, Open Protocol',
     title: 'Your team\'s space — on your terms',
-    description: 'Chat, forum threads, and calendar events for your group — running on Nostr relays you choose. Your BudaBit group decides its own degree of openness: fully private, invite-only, or wide open. Access controls and moderation stay in your hands, separate from the repo context.',
+    description: 'Chat, forum threads, and calendar events for your group — running on Nostr relays you choose. Your BudaBit group decides its own degree of openness: fully private, invite-only, or wide open. Group moderation stays in your hands, separate from the repo context.',
     details: [
       'Discord-like channels and threads on Nostr',
-      'Group calendar for standups and planning',
+      'Group calendar for standups, planning, or community events',
       'Tunable privacy — from closed team to open community',
     ],
   },
   {
-    image: '/images/feature-repo.webp',
+    desktopImage: '/images/screenshots/pr-detail-desktop.png',
+    mobileImage: '/images/screenshots/pr-detail-mobile.png',
+    imageAlt: 'Patch detail view with applied status, signed participants, and merge analysis.',
     label: 'Repo Without Walls',
     title: 'Create, fork, and mirror — anywhere',
     description: 'Manage repositories across multiple hosting providers from one place. Issues, pull requests, and repo-specific discussions live on Nostr relays — not locked inside a single platform. Migrate without losing context.',
     details: [
       'Multiple remotes for the same repo in one view',
       'Fork and mirror to any Git hosting provider',
-      'Issues and PRs stored on Nostr, portable by default',
+      'Issues, PRs and related discussions stored on Nostr, portable and verifiable by default',
     ],
   },
   {
     image: '/images/feature-trust.webp',
+    imageAlt: 'Abstract visualization of portable trust and cryptographic identity.',
     label: 'Trust That Travels',
     title: 'Cryptographic identity, verifiable reputation',
     description: 'Every commit, comment, issue, and review is cryptographically signed by its author. Reputation is personal and verifiable — no central authority decides who you trust. Switch providers, switch relays — your history and trust graph come with you.',
@@ -76,12 +82,21 @@ function PillarRow({ pillar, index }: PillarRowProps) {
           isVisible ? "opacity-100 translate-x-0" : isReversed ? "opacity-0 translate-x-12" : "opacity-0 -translate-x-12"
         )}
       >
-        <div className="relative rounded-2xl overflow-hidden border border-border/30 shadow-2xl shadow-primary/5">
-          <img
-            src={pillar.image}
-            alt={pillar.label}
-            className="w-full aspect-square object-cover"
-          />
+        <div className="relative overflow-hidden rounded-2xl border border-border/30 bg-card/60 shadow-2xl shadow-primary/10 backdrop-blur-sm">
+          {'desktopImage' in pillar && pillar.desktopImage && pillar.mobileImage ? (
+            <ResponsiveScreenshot
+              desktopSrc={pillar.desktopImage}
+              mobileSrc={pillar.mobileImage}
+              alt={pillar.imageAlt}
+              imageClassName="h-[26rem] object-top md:h-[32rem]"
+            />
+          ) : (
+            <img
+              src={pillar.image}
+              alt={pillar.imageAlt}
+              className="h-[26rem] w-full object-cover md:h-[32rem]"
+            />
+          )}
           <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
         </div>
         {/* Glow effect behind image */}

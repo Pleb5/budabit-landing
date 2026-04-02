@@ -20,17 +20,18 @@ const features = [
   {
     icon: MessageCircle,
     title: 'Channels & Threads',
-    description: 'Real-time group chat and threaded discussions. Like Discord, but on relays you control.',
+    description: 'Real-time group chat and forum discussions. Like Discord, but on relays you control.',
   },
   {
     icon: Calendar,
     title: 'Group Calendar',
-    description: 'Schedule standups, planning sessions, and releases. Calendar events live on Nostr alongside your code context.',
+    description: 'Schedule community events, standups, planning sessions, and releases. Calendar events live on Nostr alongside your code context.',
+
   },
   {
     icon: Globe,
     title: 'Multi-Remote Management',
-    description: 'Mirror and fork repos across GitHub, GitLab, Gitea, or any provider. Manage them all from one interface.',
+    description: 'Mirror and fork repos across GitHub, GitLab, Gitea, Grasp (Nostr) or any provider. Manage them all from one interface.',
   },
   {
     icon: ShieldCheck,
@@ -49,8 +50,8 @@ const features = [
   },
   {
     icon: Zap,
-    title: 'Bitcoin-Native Payments',
-    description: 'Pay CI providers with fast, cheap bitcoin-backed ecash. Zap contributors directly. No credit cards, no subscriptions.',
+    title: 'Bitcoin-Backed Payments',
+    description: 'Pay CI providers with fast, cheap bitcoin-backed ecash. Zap contributors directly with Lightning. No credit cards, no subscriptions.',
   },
 ];
 

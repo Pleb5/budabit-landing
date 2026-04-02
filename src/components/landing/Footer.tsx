@@ -1,6 +1,6 @@
 import { ExternalLink } from 'lucide-react';
 import { BudaBitIcon } from './BudaBitIcon';
-import { BUDABIT_REPO_URL, BUDABIT_COMMUNITY_URL, INTEROP_GUIDE_URL } from './constants';
+import { BUDABIT_REPO_URL, BUDABIT_COMMUNITY_URL } from './constants';
 
 export function Footer() {
   return (
@@ -32,14 +32,6 @@ export function Footer() {
             >
               <BudaBitIcon className="h-3.5 w-3.5" />
               Repo
-            </a>
-            <a
-              href={INTEROP_GUIDE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-primary transition-colors"
-            >
-              Interop Guide
             </a>
           </div>
 

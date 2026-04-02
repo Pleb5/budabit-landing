@@ -3,13 +3,17 @@ import { cn } from '@/lib/utils';
 import {
   LayoutDashboard,
   Video,
-  Bot,
   Puzzle,
   ShieldCheck,
   Radio,
 } from 'lucide-react';
 
 const extensions = [
+  {
+    icon: Radio,
+    title: 'CI Integration',
+    description: 'Select trusted CI providers and pay per-usage with ecash.',
+  },
   {
     icon: LayoutDashboard,
     title: 'Kanban Boards',
@@ -19,16 +23,6 @@ const extensions = [
     icon: Video,
     title: 'Video & Conference',
     description: 'Built-in calls and live streaming for remote teams.',
-  },
-  {
-    icon: Bot,
-    title: 'Agentic Code Review',
-    description: 'AI-powered review agents that sign their feedback with Nostr keys.',
-  },
-  {
-    icon: Radio,
-    title: 'CI Integration',
-    description: 'Select trusted CI providers and pay per-usage with ecash.',
   },
 ];
 
