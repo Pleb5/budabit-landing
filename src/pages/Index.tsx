@@ -11,9 +11,22 @@ import { CTASection } from '@/components/landing/CTASection';
 import { Footer } from '@/components/landing/Footer';
 
 const Index = () => {
+  const title = 'BudaBit — Your Code. Your Group. Your Rules.';
+  const description = 'A Discord-like collaboration platform for developers built on Nostr. Private group chat, issue tracking, pull requests, and repo management — no platform lock-in, every interaction cryptographically signed.';
+
   useSeoMeta({
-    title: 'BudaBit — Your Code. Your Group. Your Rules.',
-    description: 'A Discord-like collaboration platform for developers built on Nostr. Private group chat, issue tracking, pull requests, and repo management — no platform lock-in, every interaction cryptographically signed.',
+    title,
+    description,
+    ogTitle: title,
+    ogDescription: description,
+    ogType: 'website',
+    ogUrl: 'https://budabit.org/',
+    ogImage: 'https://budabit.org/images/logo-mark.png',
+    ogImageAlt: 'BudaBit logo and brand mark',
+    twitterTitle: title,
+    twitterDescription: description,
+    twitterCard: 'summary',
+    twitterImage: 'https://budabit.org/images/logo-mark.png',
   });
 
   return (
