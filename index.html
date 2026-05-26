@@ -17,7 +17,8 @@
       property="og:description"
       content="BudaBit helps sovereign software communities ship the future with community chat, issues, pull requests, and repo workflows built on Nostr."
     />
-    <meta property="og:image" content="https://budabit.org/images/logo-mark.png" />
+    <meta property="og:image" content="https://budabit.org/images/budabit-logo.svg" />
+    <meta property="og:image:type" content="image/svg+xml" />
     <meta property="og:image:alt" content="BudaBit logo and brand mark" />
     <meta property="og:image:width" content="1024" />
     <meta property="og:image:height" content="1024" />
@@ -27,9 +28,13 @@
       name="twitter:description"
       content="BudaBit helps sovereign software communities ship the future with community chat, issues, pull requests, and repo workflows built on Nostr."
     />
-    <meta name="twitter:image" content="https://budabit.org/images/logo-mark.png" />
-    <meta http-equiv="content-security-policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; frame-src 'self' https:; font-src 'self'; base-uri 'self'; manifest-src 'self'; connect-src 'self' blob: https: wss:; img-src 'self' data: blob: https:; media-src 'self' https:">
-    <link rel="manifest" href="/manifest.webmanifest">
+    <meta name="twitter:image" content="https://budabit.org/images/budabit-logo.svg" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f8f1df" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0f1217" />
+    <meta http-equiv="content-security-policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; frame-src 'self' https:; font-src 'self'; base-uri 'self'; connect-src 'self' blob: https: wss:; img-src 'self' data: blob: https:; media-src 'self' https:">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" sizes="64x64" />
+    <link rel="icon" type="image/png" href="/images/favicon-light.png" sizes="256x256" media="(prefers-color-scheme: light)" />
+    <link rel="icon" type="image/png" href="/images/favicon-dark.png" sizes="256x256" media="(prefers-color-scheme: dark)" />
   </head>
   <body>
     <div id="root"></div>

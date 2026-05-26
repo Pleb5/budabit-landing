@@ -5,53 +5,52 @@ import {
   MessageCircle,
   Calendar,
   Search,
-  Zap,
   Globe,
   ShieldCheck,
   Users,
+  Server,
 } from 'lucide-react';
 
 const features = [
   {
     icon: GitPullRequest,
-    title: 'Issues & Pull Requests',
-    description: 'Full issue tracking and patch management with status updates, all stored as Nostr events — portable and signed.',
+    title: 'Community Curations',
+    description: 'Curate important knowledge for your community with signed targeting events, portable discovery, and visible provenance.',
   },
   {
     icon: MessageCircle,
-    title: 'Channels & Threads',
-    description: 'Real-time group chat and forum discussions. Like Discord, but on relays you control.',
-  },
-  {
-    icon: Calendar,
-    title: 'Group Calendar',
-    description: 'Schedule community events, standups, planning sessions, and releases. Calendar events live on Nostr alongside your code context.',
-
-  },
-  {
-    icon: Globe,
-    title: 'Multi-Remote Management',
-    description: 'Mirror and fork repos across GitHub, GitLab, Gitea, Grasp (Nostr) or any provider. Manage them all from one interface.',
-  },
-  {
-    icon: ShieldCheck,
-    title: 'Verifiable Everything',
-    description: 'Every comment, review, and merge is signed with a Nostr key. Provenance is cryptographic, not platform-granted.',
-  },
-  {
-    icon: Users,
-    title: 'Personal Web of Trust',
-    description: 'You decide who you trust — based on cryptographic identity and observable behavior, not platform permissions.',
+    title: 'Rooms & Threads',
+    description: 'Community rooms, chat messages, and forum threads live as Nostr events scoped to the community instead of a provider account.',
   },
   {
     icon: Search,
-    title: 'Open & Permissionless',
-    description: 'Any feature you\'d expect from a closed platform — open, standardized, and accessible on Nostr. Moderation stays in your hands.',
+    title: 'Knowledge That Travels',
+    description: 'Preserve recommendations, references, and useful context in a form that can be inspected, mirrored, and reused by compatible clients.',
   },
   {
-    icon: Zap,
-    title: 'Bitcoin-Backed Payments',
-    description: 'Pay CI providers with fast, cheap bitcoin-backed ecash. Zap contributors directly with Lightning. No credit cards, no subscriptions.',
+    icon: Globe,
+    title: 'Redundant Mirroring',
+    description: 'Read and publish through multiple relays. Community identity and history are not pinned to one URL or one operator.',
+  },
+  {
+    icon: ShieldCheck,
+    title: 'Content-Based Permissions',
+    description: 'Grant publishing rights by section: rooms, curations, widgets, reactions, labels, or general participation.',
+  },
+  {
+    icon: Users,
+    title: 'Moderator Workflows',
+    description: 'Review access requests, grant or reject permissions, and moderate events or people with auditable Nostr records.',
+  },
+  {
+    icon: Calendar,
+    title: 'Events & Goals',
+    description: 'Coordinate releases, calls, goals, and milestones beside the community discussions they belong to.',
+  },
+  {
+    icon: Server,
+    title: 'Optional Media Persistence',
+    description: 'Communities can publish Blossom media server hints so important images and files can be mirrored instead of rotting.',
   },
 ];
 
@@ -72,13 +71,13 @@ export function FeaturesGrid() {
             "text-3xl md:text-5xl font-bold tracking-tight transition-all duration-700 delay-100",
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           )}>
-            Everything you need, nothing you don&apos;t own
+            The community layer for Open-Protocol development
           </h2>
           <p className={cn(
             "text-muted-foreground text-lg mt-4 max-w-2xl mx-auto transition-all duration-700 delay-200",
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           )}>
-            Every feature a developer team needs — built on open protocols that make each event provable, portable, and standardized.
+            The work around software becomes signed, inspectable, and portable: curation, rooms, access, moderation, and the context teams need to ship.
           </p>
         </div>
 

@@ -16,9 +16,17 @@ export function ResponsiveScreenshot({
   imageClassName,
 }: ResponsiveScreenshotProps) {
   return (
-    <picture className={cn('block', className)}>
-      <source media="(max-width: 767px)" srcSet={mobileSrc} />
-      <img src={desktopSrc} alt={alt} className={cn('w-full h-full object-cover', imageClassName)} />
-    </picture>
+    <div className={cn('block', className)}>
+      <img
+        src={mobileSrc}
+        alt={alt}
+        className={cn('h-full w-full object-cover md:hidden', imageClassName)}
+      />
+      <img
+        src={desktopSrc}
+        alt={alt}
+        className={cn('hidden h-full w-full object-cover md:block', imageClassName)}
+      />
+    </div>
   );
 }

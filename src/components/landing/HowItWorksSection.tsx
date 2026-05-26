@@ -4,28 +4,28 @@ import { Shield, GitBranch, MessageSquare, Radio } from 'lucide-react';
 
 const steps = [
   {
-    icon: Shield,
+    icon: Radio,
     number: '01',
-    title: 'Sign in with your Nostr key',
-    description: 'Your cryptographic identity is your passport. No emails, no passwords, no platform accounts. One key pair signs everything you do.',
+    title: 'Visit budabit.club',
+    description: 'Start in the app. Explore public developer communities, inspect their rooms and curated work. Bring your own Nostr identity when you are ready to participate.',
   },
   {
     icon: MessageSquare,
     number: '02',
-    title: 'Create or join a BudaBit group',
-    description: 'Set up your team\'s private space — channels, threads, calendar — on the Nostr relays you trust. Tune access from invite-only to wide open.',
+    title: 'Create or enter a community',
+    description: 'Communities are Communikey pubkeys with their own content sections, relays, moderators, Blossom media servers, and member-facing access flows.',
   },
   {
     icon: GitBranch,
     number: '03',
-    title: 'Connect your repositories',
-    description: 'Link repos from any Git provider. Manage issues, PRs, and discussions across multiple remotes — all in one place, all on Nostr.',
+    title: 'Curate community knowledge',
+    description: 'Collect important repos, code snippets, and many types of content to enrich the collective hive mind.',
   },
   {
-    icon: Radio,
+    icon: Shield,
     number: '04',
-    title: 'Collaborate with provenance',
-    description: 'Every interaction is cryptographically signed and stored on relays you choose. Your contributions, reputation, and history are portable and verifiable.',
+    title: 'Grant access and moderate',
+    description: 'Use content-based permissions so members and moderators can publish in specific sections, review applications, and keep community spaces high-signal.',
   },
 ];
 
@@ -33,7 +33,7 @@ export function HowItWorksSection() {
   const [ref, isVisible] = useScrollReveal<HTMLDivElement>();
 
   return (
-    <section className="py-24 md:py-32 relative">
+    <section className="relative pt-24 pb-8 md:pt-32 md:pb-10">
       {/* Subtle background accent */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-primary/3 blur-[120px]" />
@@ -51,13 +51,13 @@ export function HowItWorksSection() {
             "text-3xl md:text-5xl font-bold tracking-tight transition-all duration-700 delay-100",
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           )}>
-            Nostr as your control plane
+            Open protocols as the coordination layer
           </h2>
           <p className={cn(
             "text-muted-foreground text-lg mt-4 max-w-2xl mx-auto transition-all duration-700 delay-200",
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           )}>
-            Nostr replaces the platform with a protocol. Your identity, your data, and your relationships are cryptographically yours — BudaBit just gives you a great interface to use them.
+            Nostr carries community identity, signed activity, curation, and permission state. BudaBit gives developers a focused interface for using that open coordination graph.
           </p>
         </div>
 

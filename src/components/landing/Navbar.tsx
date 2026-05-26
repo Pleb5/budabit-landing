@@ -1,19 +1,23 @@
 import { useState, useEffect } from 'react';
 import { ExternalLink, Menu, X } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import { BudaBitIcon } from './BudaBitIcon';
-import { BUDABIT_REPO_URL, BUDABIT_COMMUNITY_URL } from './constants';
-
-const navLinks = [
-  { label: 'Features', href: '#features' },
-  { label: 'How It Works', href: '#how-it-works' },
-  { label: 'Extensions', href: '#extensions' },
-];
+import { BUDABIT_COMMUNITY_URL } from './constants';
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { pathname } = useLocation();
+
+  const sectionHref = (sectionId: string) => {
+    if (pathname === '/') return `#${sectionId}`;
+    return `/#${sectionId}`;
+  };
+
+  const navLinks = [
+    { label: 'How It Works', href: sectionHref('how-it-works') },
+  ];
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40);
@@ -33,7 +37,7 @@ export function Navbar() {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2.5 group">
+          <a href="/" className="flex items-center gap-2.5 group">
             <img
               src="/images/budabit-logo.svg"
               alt="BudaBit"
@@ -61,14 +65,11 @@ export function Navbar() {
           <div className="hidden md:flex items-center gap-3">
             <Button
               asChild
-              variant="ghost"
+              variant="outline"
               size="sm"
-              className="text-muted-foreground hover:text-foreground"
+              className="rounded-xl border-primary/40 bg-primary/10 text-primary hover:border-primary/60 hover:bg-primary/15"
             >
-              <a href={BUDABIT_REPO_URL} target="_blank" rel="noopener noreferrer">
-                <BudaBitIcon className="mr-1.5 h-4 w-4" />
-                Repo
-              </a>
+              <a href="/quick-start">Quick Start</a>
             </Button>
             <Button
               asChild
@@ -77,7 +78,7 @@ export function Navbar() {
             >
               <a href={BUDABIT_COMMUNITY_URL} target="_blank" rel="noopener noreferrer">
                 <ExternalLink className="mr-1.5 h-4 w-4" />
-                Open App
+                budabit.club
               </a>
             </Button>
           </div>
@@ -111,17 +112,14 @@ export function Navbar() {
               {link.label}
             </a>
           ))}
-          <div className="flex gap-3 pt-2">
+          <div className="grid gap-3 pt-2 sm:grid-cols-2">
             <Button
               asChild
               variant="outline"
               size="sm"
-              className="flex-1 rounded-xl"
+              className="rounded-xl border-primary/40 bg-primary/10 text-primary hover:border-primary/60 hover:bg-primary/15"
             >
-              <a href={BUDABIT_REPO_URL} target="_blank" rel="noopener noreferrer">
-                <BudaBitIcon className="mr-1.5 h-4 w-4" />
-                Repo
-              </a>
+              <a href="/quick-start">Quick Start</a>
             </Button>
             <Button
               asChild
@@ -130,7 +128,7 @@ export function Navbar() {
             >
               <a href={BUDABIT_COMMUNITY_URL} target="_blank" rel="noopener noreferrer">
                 <ExternalLink className="mr-1.5 h-4 w-4" />
-                Open App
+                budabit.club
               </a>
             </Button>
           </div>

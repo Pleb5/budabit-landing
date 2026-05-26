@@ -1,44 +1,48 @@
+import { Compass, ExternalLink } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import { useScrollReveal } from './useScrollReveal';
 import { cn } from '@/lib/utils';
 import { ResponsiveScreenshot } from './ResponsiveScreenshot';
+import { screenshotAssets } from './screenshotAssets';
+import { BUDABIT_COMMUNITY_URL } from './constants';
 
 const pillars = [
   {
-    desktopImage: '/images/screenshots/chat-room-desktop.png',
-    mobileImage: '/images/screenshots/chat-room-mobile.png',
-    imageAlt: 'BudaBit chat room showing contributor discussion and community coordination.',
-    label: 'Private Group, Open Protocol',
-    title: 'Your team\'s space — on your terms',
-    description: 'Chat, forum threads, and calendar events for your group — running on Nostr relays you choose. Your BudaBit group decides its own degree of openness: fully private, invite-only, or wide open. Group moderation stays in your hands, separate from the repo context.',
+    desktopImage: screenshotAssets.chatRoomDesktop,
+    mobileImage: screenshotAssets.chatRoomMobile,
+    imageAlt: 'BudaBit room showing contributor discussion scoped to a community identity.',
+    label: 'Community-Owned Identity',
+    title: 'Communities are keys, not servers',
+    description: 'A BudaBit community is identified by a durable Nostr pubkey. Servers are infrastructure hints, not the community itself, so rooms, sections, permissions, and identity can outlive any one host.',
     details: [
-      'Discord-like channels and threads on Nostr',
-      'Group calendar for standups, planning, or community events',
-      'Tunable privacy — from closed team to open community',
+      'Enter a community by npub or ncommunity',
+      'Rooms and threads scoped to community identity',
+      'Relay and media infrastructure can be replaced or mirrored',
     ],
   },
   {
-    desktopImage: '/images/screenshots/pr-detail-desktop.png',
-    mobileImage: '/images/screenshots/pr-detail-mobile.png',
-    imageAlt: 'Patch detail view with applied status, signed participants, and merge analysis.',
-    label: 'Repo Without Walls',
-    title: 'Create, fork, and mirror — anywhere',
-    description: 'Manage repositories across multiple hosting providers from one place. Issues, pull requests, and repo-specific discussions live on Nostr relays — not locked inside a single platform. Migrate without losing context.',
+    desktopImage: screenshotAssets.prDetailDesktop,
+    mobileImage: screenshotAssets.prDetailMobile,
+    imageAlt: 'BudaBit repository detail showing signed development activity and community curation context.',
+    label: 'Community Curation',
+    title: 'Curate and ship software together',
+    description: 'Communities can curate important knowledge into a durable treasure trove of information. Curation becomes a signed, reviewable part of the community instead of private lists trapped faceless services.',
     details: [
-      'Multiple remotes for the same repo in one view',
-      'Fork and mirror to any Git hosting provider',
-      'Issues, PRs and related discussions stored on Nostr, portable and verifiable by default',
+      'Community collections for important development context',
+      'Information can be targeted to communities without duplicating it',
+      'Curator permissions can be granted per content section',
     ],
   },
   {
     image: '/images/feature-trust.webp',
     imageAlt: 'Abstract visualization of portable trust and cryptographic identity.',
-    label: 'Trust That Travels',
-    title: 'Cryptographic identity, verifiable reputation',
-    description: 'Every commit, comment, issue, and review is cryptographically signed by its author. Reputation is personal and verifiable — no central authority decides who you trust. Switch providers, switch relays — your history and trust graph come with you.',
+    label: 'Open-Protocol Development',
+    title: 'The work around shipping becomes portable',
+    description: 'Git made code shareable. Nostr makes coordination shareable too: reviews, rooms, access grants, moderation, repo context, and reputation can be verified independently and carried across relays and clients.',
     details: [
-      'Every interaction signed with your Nostr key',
-      'Personal web of trust — you decide who to trust',
-      'Portable reputation across platforms and relays',
+      'Every meaningful action signed with a Nostr key',
+      'Moderation and access decisions remain auditable',
+      'Reputation and context travel with the people and communities',
     ],
   },
 ];
@@ -51,6 +55,29 @@ export function PillarsSection() {
           {pillars.map((pillar, i) => (
             <PillarRow key={pillar.label} pillar={pillar} index={i} />
           ))}
+        </div>
+        <div className="mt-20 flex flex-col items-center justify-center gap-4 sm:flex-row sm:flex-wrap md:mt-24">
+          <Button
+            asChild
+            size="lg"
+            className="h-14 px-8 text-base font-semibold rounded-2xl bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/20 transition-all hover:shadow-xl hover:shadow-primary/30 hover:scale-[1.02]"
+          >
+            <a href={BUDABIT_COMMUNITY_URL} target="_blank" rel="noopener noreferrer">
+              <ExternalLink className="mr-2 h-5 w-5" />
+              Explore budabit.club
+            </a>
+          </Button>
+          <Button
+            asChild
+            variant="outline"
+            size="lg"
+            className="h-14 px-8 text-base font-semibold rounded-2xl border-primary/40 bg-primary/10 text-primary hover:border-primary/60 hover:bg-primary/15 transition-all hover:scale-[1.02]"
+          >
+            <a href="/quick-start">
+              <Compass className="mr-2 h-5 w-5" />
+              Quick Start Guide
+            </a>
+          </Button>
         </div>
       </div>
     </section>

@@ -1,8 +1,8 @@
-import { ArrowRight, ExternalLink } from 'lucide-react';
+import { Compass, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { BudaBitIcon } from './BudaBitIcon';
-import { BUDABIT_REPO_URL, BUDABIT_COMMUNITY_URL } from './constants';
+import { BUDABIT_COMMUNITY_URL } from './constants';
 import { ResponsiveScreenshot } from './ResponsiveScreenshot';
+import { screenshotAssets } from './screenshotAssets';
 
 export function HeroSection() {
   return (
@@ -34,16 +34,16 @@ export function HeroSection() {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-primary/5 text-primary text-sm font-medium mb-8 animate-fade-in">
             <span className="w-2 h-2 rounded-full bg-primary animate-glow-pulse" />
-            Open source &middot; Built on Nostr
+            Community network &middot; Built on Nostr
           </div>
 
           {/* Headline */}
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.05] mb-6 animate-fade-in-up">
-            Your code.{' '}
+            Open-Protocol{' '}
             <br className="hidden sm:block" />
-            <span className="text-primary">Your group.</span>{' '}
+            <span className="text-primary">development.</span>{' '}
             <br className="hidden sm:block" />
-            Your rules.
+            Connected communities.
           </h1>
 
           {/* Subhead */}
@@ -51,12 +51,12 @@ export function HeroSection() {
             className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed opacity-0 animate-fade-in-up"
             style={{ animationDelay: '0.15s' }}
           >
-            BudaBit is a Discord-like collaboration platform for developers — private group chat, issue tracking, pull requests, and repo management — all running on Nostr. No platform lock-in. Every interaction cryptographically signed.
+            BudaBit upgrades open-source development into Open-Protocol development: the coordination around shipping software becomes verifiable, portable, and community-owned.
           </p>
 
           {/* CTA Buttons */}
           <div
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 opacity-0 animate-fade-in-up"
+            className="flex flex-col items-center justify-center gap-4 opacity-0 animate-fade-in-up sm:flex-row sm:flex-wrap"
             style={{ animationDelay: '0.3s' }}
           >
             <Button
@@ -66,19 +66,18 @@ export function HeroSection() {
             >
               <a href={BUDABIT_COMMUNITY_URL} target="_blank" rel="noopener noreferrer">
                 <ExternalLink className="mr-2 h-5 w-5" />
-                Explore BudaBit Community
+                Explore budabit.club
               </a>
             </Button>
             <Button
               asChild
               variant="outline"
               size="lg"
-              className="h-14 px-8 text-base font-semibold rounded-2xl border-border/50 hover:border-primary/40 hover:bg-primary/5 transition-all hover:scale-[1.02]"
+              className="h-14 px-8 text-base font-semibold rounded-2xl border-primary/40 bg-primary/10 text-primary hover:border-primary/60 hover:bg-primary/15 transition-all hover:scale-[1.02]"
             >
-              <a href={BUDABIT_REPO_URL} target="_blank" rel="noopener noreferrer">
-                <BudaBitIcon className="mr-2 h-5 w-5" />
-                View on BudaBit
-                <ArrowRight className="ml-2 h-4 w-4" />
+              <a href="/quick-start">
+                <Compass className="mr-2 h-5 w-5" />
+                Quick Start
               </a>
             </Button>
           </div>
@@ -88,7 +87,7 @@ export function HeroSection() {
             className="flex flex-wrap items-center justify-center gap-3 mt-12 opacity-0 animate-fade-in"
             style={{ animationDelay: '0.5s' }}
           >
-            {['Nostr Protocol', 'Git Native', 'Cashu eCash', 'Lightning zaps'].map((label) => (
+            {['Open-Protocol Development', 'Communikey Communities', 'Community Curations', 'Portable Provenance'].map((label) => (
               <span
                 key={label}
                 className="px-3 py-1.5 rounded-lg bg-secondary/60 text-muted-foreground text-xs font-mono tracking-wide border border-border/40"
@@ -104,17 +103,17 @@ export function HeroSection() {
           >
             <div className="absolute inset-x-10 top-10 h-40 rounded-full bg-primary/20 blur-3xl" />
             <div className="relative overflow-hidden rounded-[2rem] border border-primary/20 bg-card/80 shadow-2xl shadow-black/40 backdrop-blur-sm">
-              <div className="flex items-center gap-2 border-b border-border/60 bg-background/80 px-4 py-3 text-[11px] font-mono uppercase tracking-[0.24em] text-muted-foreground sm:px-5">
+              <div className="flex items-center gap-2 border-b border-border/60 bg-background/80 px-4 py-3 text-[9px] font-mono uppercase tracking-[0.12em] text-muted-foreground sm:px-5 sm:text-[11px] sm:tracking-[0.24em]">
                 <span className="h-2.5 w-2.5 rounded-full bg-primary/90" />
                 <span className="h-2.5 w-2.5 rounded-full bg-secondary" />
                 <span className="h-2.5 w-2.5 rounded-full bg-foreground/30" />
-                <span className="ml-2 truncate">Sovereign repo collaboration</span>
+                <span className="ml-1 min-w-0">Community-owned development graph</span>
               </div>
 
               <ResponsiveScreenshot
-                desktopSrc="/images/screenshots/repo-overview-desktop.png"
-                mobileSrc="/images/screenshots/repo-overview-mobile.png"
-                alt="BudaBit repository overview showing branches, maintainers, issues, patches, and portable clone URLs."
+                desktopSrc={screenshotAssets.repoOverviewDesktop}
+                mobileSrc={screenshotAssets.repoOverviewMobile}
+                alt="BudaBit repository workspace with signed activity, community context, and portable repository coordination."
                 imageClassName="w-full h-auto object-top"
               />
             </div>

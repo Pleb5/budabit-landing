@@ -10,19 +10,19 @@ import {
 
 const extensions = [
   {
-    icon: Radio,
-    title: 'CI Integration',
-    description: 'Select trusted CI providers and pay per-usage with ecash.',
+    icon: LayoutDashboard,
+    title: 'Community Widgets',
+    description: 'Curate useful widgets into a community so members can discover tools from sources they trust.',
   },
   {
-    icon: LayoutDashboard,
-    title: 'Kanban Boards',
-    description: 'Visual project management for your issues and tasks.',
+    icon: Radio,
+    title: 'Trusted Automation',
+    description: 'Surface build, release, or workflow helpers through signed Nostr events and explicit community curation.',
   },
   {
     icon: Video,
-    title: 'Video & Conference',
-    description: 'Built-in calls and live streaming for remote teams.',
+    title: 'Live Coordination',
+    description: 'Add real-time tools around rooms, events, and developer workflows without hiding provenance.',
   },
 ];
 
@@ -45,19 +45,19 @@ export function ExtensionsSection() {
                 "text-primary font-mono text-sm tracking-widest uppercase mb-4 transition-all duration-700",
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               )}>
-                Extensible by Design
+                Community-Curated Tools
               </p>
               <h2 className={cn(
                 "text-3xl md:text-5xl font-bold tracking-tight mb-6 transition-all duration-700 delay-100",
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               )}>
-                Load what you need. Verify who made it.
+                Load what your community trusts. Verify who made it.
               </h2>
               <p className={cn(
                 "text-muted-foreground text-lg leading-relaxed mb-8 transition-all duration-700 delay-200",
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               )}>
-                Extensions are published on Nostr — so security and reputation are verifiable before you install anything. Load plugins from accounts you trust, or build your own.
+                Smart widgets and extensions are published as signed Nostr events. Communities can curate the tools they recommend while members still see the author, source, and reputation trail.
               </p>
 
               <div className={cn(
@@ -66,10 +66,10 @@ export function ExtensionsSection() {
               )}>
                 <ShieldCheck className="h-5 w-5 text-primary mt-0.5 shrink-0" />
                 <div>
-                  <p className="font-semibold text-sm mb-1">Verifiable Extensions</p>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
-                    Every extension is signed by its author&apos;s Nostr key. Check their reputation before you load — no blind trust in app stores.
-                  </p>
+                    <p className="font-semibold text-sm mb-1">Signed Community Tools</p>
+                    <p className="text-muted-foreground text-sm leading-relaxed">
+                    Every widget is signed by its author&apos;s Nostr key. Communities can recommend tools without asking members to blindly trust a hidden registry.
+                    </p>
                 </div>
               </div>
 
@@ -82,9 +82,9 @@ export function ExtensionsSection() {
               >
                 <Puzzle className="h-5 w-5 text-primary mt-0.5 shrink-0" />
                 <div>
-                  <p className="font-semibold text-sm mb-1">Build Your Own</p>
+                  <p className="font-semibold text-sm mb-1">Curated, Not Bundled</p>
                   <p className="text-muted-foreground text-sm leading-relaxed">
-                    The extension system is open. Build custom tooling for your team and publish it on Nostr for others to discover and verify.
+                    Built-in extensions are not forced into every community. Add tools when they fit the culture, workflow, and trust model of the people using them.
                   </p>
                 </div>
               </div>

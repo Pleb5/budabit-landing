@@ -16,13 +16,19 @@ export function Footer() {
           {/* Links */}
           <div className="flex items-center gap-6 text-sm text-muted-foreground">
             <a
+              href="/quick-start"
+              className="hover:text-primary transition-colors"
+            >
+              Quick Start
+            </a>
+            <a
               href={BUDABIT_COMMUNITY_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1.5 hover:text-primary transition-colors"
             >
               <ExternalLink className="h-3.5 w-3.5" />
-              Community
+              budabit.club
             </a>
             <a
               href={BUDABIT_REPO_URL}
@@ -31,13 +37,13 @@ export function Footer() {
               className="flex items-center gap-1.5 hover:text-primary transition-colors"
             >
               <BudaBitIcon className="h-3.5 w-3.5" />
-              Repo
+              BudaBit repo
             </a>
           </div>
 
           {/* Credits */}
           <div className="text-sm text-muted-foreground/60">
-            Open source &middot; Built on{' '}
+            Community network &middot; Built on{' '}
             <a
               href="https://nostr.com"
               target="_blank"

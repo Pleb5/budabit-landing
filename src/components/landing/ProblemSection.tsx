@@ -5,18 +5,18 @@ import { cn } from '@/lib/utils';
 const problems = [
   {
     icon: Unlink,
-    title: 'Fragmented Workflow',
-    description: 'Your code lives on GitHub, conversations on Discord, planning on Notion, CI on yet another platform. Context is scattered, continuity is lost.',
+    title: 'Coordination Trapped in Tools',
+    description: 'Open-source code can move, but conversations, access decisions, curation, and review context often stay buried in closed apps and private databases.',
   },
   {
     icon: Lock,
-    title: 'Platform Lock-in',
-    description: 'Your issues, reviews, and discussions belong to the platform — not to you. Migrate and you start from zero. Your reputation doesn\'t travel.',
+    title: 'Curation is hindered',
+    description: 'Curated knowledge is hard to preserve and verify.',
   },
   {
     icon: AlertTriangle,
-    title: 'Trust by Authority',
-    description: 'Permissions are granted by platform admins, not verified by cryptographic identity. You can\'t independently verify who did what — you just have to trust the provider.',
+    title: 'Provider-Bound Permissions',
+    description: 'Content policies are provider-specific. Communities need transparent and portable moderation.',
   },
 ];
 
@@ -31,13 +31,13 @@ export function ProblemSection() {
             "text-primary font-mono text-sm tracking-widest uppercase mb-4 transition-all duration-700",
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           )}>
-            The problem
+            Why it matters
           </p>
           <h2 className={cn(
             "text-3xl md:text-5xl font-bold tracking-tight transition-all duration-700 delay-100",
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           )}>
-            Developer tools shouldn&apos;t be silos
+            Open-source needs open coordination
           </h2>
         </div>
 
