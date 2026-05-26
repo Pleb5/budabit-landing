@@ -8,9 +8,11 @@ import { BUDABIT_COMMUNITY_URL } from './constants';
 
 const pillars = [
   {
-    desktopImage: screenshotAssets.chatRoomDesktop,
-    mobileImage: screenshotAssets.chatRoomMobile,
-    imageAlt: 'BudaBit room showing contributor discussion scoped to a community identity.',
+    desktopImage: screenshotAssets.communityHome.desktop,
+    mobileImage: screenshotAssets.communityHome.mobile,
+    darkDesktopImage: screenshotAssets.communityHome.darkDesktop,
+    darkMobileImage: screenshotAssets.communityHome.darkMobile,
+    imageAlt: 'BudaBit community home showing sections, rooms, and members anchored to a shared community identity.',
     label: 'Community-Owned Identity',
     title: 'Communities are keys, not servers',
     description: 'A BudaBit community is identified by a durable Nostr pubkey. Servers are infrastructure hints, not the community itself, so rooms, sections, permissions, and identity can outlive any one host.',
@@ -21,9 +23,11 @@ const pillars = [
     ],
   },
   {
-    desktopImage: screenshotAssets.prDetailDesktop,
-    mobileImage: screenshotAssets.prDetailMobile,
-    imageAlt: 'BudaBit repository detail showing signed development activity and community curation context.',
+    desktopImage: screenshotAssets.communityCuration.desktop,
+    mobileImage: screenshotAssets.communityCuration.mobile,
+    darkDesktopImage: screenshotAssets.communityCuration.darkDesktop,
+    darkMobileImage: screenshotAssets.communityCuration.darkMobile,
+    imageAlt: 'BudaBit community curation interface for collecting durable project knowledge.',
     label: 'Community Curation',
     title: 'Curate and ship software together',
     description: 'Communities can curate important knowledge into a durable treasure trove of information. Curation becomes a signed, reviewable part of the community instead of private lists trapped faceless services.',
@@ -34,8 +38,11 @@ const pillars = [
     ],
   },
   {
-    image: '/images/feature-trust.webp',
-    imageAlt: 'Abstract visualization of portable trust and cryptographic identity.',
+    desktopImage: screenshotAssets.moderationAccess.desktop,
+    mobileImage: screenshotAssets.moderationAccess.mobile,
+    darkDesktopImage: screenshotAssets.moderationAccess.darkDesktop,
+    darkMobileImage: screenshotAssets.moderationAccess.darkMobile,
+    imageAlt: 'BudaBit moderation and access controls showing signed, auditable community decisions.',
     label: 'Open-Protocol Development',
     title: 'The work around shipping becomes portable',
     description: 'Git made code shareable. Nostr makes coordination shareable too: reviews, rooms, access grants, moderation, repo context, and reputation can be verified independently and carried across relays and clients.',
@@ -104,26 +111,20 @@ function PillarRow({ pillar, index }: PillarRowProps) {
       {/* Image */}
       <div
         className={cn(
-          "relative transition-all duration-1000",
+          "relative mx-auto w-full max-w-[430px] transition-opacity duration-700 md:max-w-3xl lg:max-w-[640px] xl:max-w-[680px]",
           isReversed && "lg:col-start-2",
-          isVisible ? "opacity-100 translate-x-0" : isReversed ? "opacity-0 translate-x-12" : "opacity-0 -translate-x-12"
+          isReversed ? "lg:ml-auto" : "lg:mr-auto",
+          isVisible ? "opacity-100" : "opacity-0"
         )}
       >
-        <div className="relative overflow-hidden rounded-2xl border border-border/30 bg-card/60 shadow-2xl shadow-primary/10 backdrop-blur-sm">
-          {'desktopImage' in pillar && pillar.desktopImage && pillar.mobileImage ? (
-            <ResponsiveScreenshot
-              desktopSrc={pillar.desktopImage}
-              mobileSrc={pillar.mobileImage}
-              alt={pillar.imageAlt}
-              imageClassName="h-[26rem] object-top md:h-[32rem]"
-            />
-          ) : (
-            <img
-              src={pillar.image}
-              alt={pillar.imageAlt}
-              className="h-[26rem] w-full object-cover md:h-[32rem]"
-            />
-          )}
+        <div className="relative overflow-hidden rounded-2xl border border-border/30 bg-card/60 shadow-2xl shadow-primary/10">
+          <ResponsiveScreenshot
+            desktopSrc={pillar.desktopImage}
+            mobileSrc={pillar.mobileImage}
+            darkDesktopSrc={pillar.darkDesktopImage}
+            darkMobileSrc={pillar.darkMobileImage}
+            alt={pillar.imageAlt}
+          />
           <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
         </div>
         {/* Glow effect behind image */}
@@ -133,7 +134,7 @@ function PillarRow({ pillar, index }: PillarRowProps) {
       {/* Content */}
       <div
         className={cn(
-          "transition-all duration-1000 delay-200",
+          "mx-auto max-w-2xl transition-all duration-1000 delay-200 lg:mx-0",
           isReversed && "lg:col-start-1",
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         )}

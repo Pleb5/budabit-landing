@@ -98,23 +98,17 @@ export function HeroSection() {
           </div>
 
           <div
-            className="relative mt-14 opacity-0 animate-fade-in-up"
+            className="relative mx-auto mt-14 max-w-[430px] opacity-0 animate-fade-in md:max-w-5xl"
             style={{ animationDelay: '0.4s' }}
           >
             <div className="absolute inset-x-10 top-10 h-40 rounded-full bg-primary/20 blur-3xl" />
-            <div className="relative overflow-hidden rounded-[2rem] border border-primary/20 bg-card/80 shadow-2xl shadow-black/40 backdrop-blur-sm">
-              <div className="flex items-center gap-2 border-b border-border/60 bg-background/80 px-4 py-3 text-[9px] font-mono uppercase tracking-[0.12em] text-muted-foreground sm:px-5 sm:text-[11px] sm:tracking-[0.24em]">
-                <span className="h-2.5 w-2.5 rounded-full bg-primary/90" />
-                <span className="h-2.5 w-2.5 rounded-full bg-secondary" />
-                <span className="h-2.5 w-2.5 rounded-full bg-foreground/30" />
-                <span className="ml-1 min-w-0">Community-owned development graph</span>
-              </div>
-
+            <div className="relative overflow-hidden rounded-[2rem] border border-primary/20 bg-card/80 shadow-2xl shadow-black/40">
               <ResponsiveScreenshot
-                desktopSrc={screenshotAssets.repoOverviewDesktop}
-                mobileSrc={screenshotAssets.repoOverviewMobile}
+                desktopSrc={screenshotAssets.communityNetwork.desktop}
+                mobileSrc={screenshotAssets.communityNetwork.mobile}
+                darkDesktopSrc={screenshotAssets.communityNetwork.darkDesktop}
+                darkMobileSrc={screenshotAssets.communityNetwork.darkMobile}
                 alt="BudaBit repository workspace with signed activity, community context, and portable repository coordination."
-                imageClassName="w-full h-auto object-top"
               />
             </div>
           </div>
