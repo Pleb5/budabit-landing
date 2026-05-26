@@ -68,7 +68,6 @@ export default tseslint.config(
         ],
       ],
       "custom/no-inline-script": "error",
-      "custom/require-webmanifest": "error",
     },
   }
 );

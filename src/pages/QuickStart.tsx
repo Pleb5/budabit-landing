@@ -46,11 +46,6 @@ const onboardingSteps: GuideCard[] = [
 
 const communitySetupCards: GuideCard[] = [
   {
-    icon: Search,
-    title: 'Build community curations',
-    body: 'Create curated collections instead of scattering recommendations across chats, docs, and private bookmarks.',
-  },
-  {
     icon: ShieldCheck,
     title: 'Grant content-based permissions',
     body: 'Let people request specific capabilities such as writing in rooms, publishing curations, reacting, labeling, or managing widgets.',
@@ -58,19 +53,23 @@ const communitySetupCards: GuideCard[] = [
   {
     icon: Users,
     title: 'Delegate moderation',
-    body: 'Moderators can review applications, grant or reject access, and moderate content within the sections they are trusted to manage.',
+    body: 'Moderators can create application forms, grant or reject access, and moderate content within the sections they are trusted to manage.',
+  },
+  {
+    icon: Search,
+    title: 'Build community curations',
+    body: 'Create curated collections instead of scattering recommendations across chats, docs, and private bookmarks.',
   },
   {
     icon: Server,
     title: 'Add infrastructure later',
-    body: 'Running a relay or Blossom media server is optional. Add them when your community wants stronger mirroring, persistence, or media durability.',
+    body: 'Running a Nostr relay or Blossom media server is optional. Add them when your community wants stronger mirroring, persistence, or media durability.',
   },
 ];
 
 const optionalInfrastructure = [
   'Run one or more relays to strengthen community redundancy and reduce dependence on any single operator.',
   'Add Blossom media servers so important images and files can be mirrored by community infrastructure.',
-  'Keep using budabit.club as the easy entry point while your community grows into its own infrastructure choices.',
 ];
 
 export default function QuickStart() {
@@ -112,35 +111,12 @@ export default function QuickStart() {
           </a>
 
           <section className="mx-auto max-w-4xl text-center">
-            <div className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/10 px-4 py-2 text-xs font-medium uppercase tracking-[0.18em] text-primary">
-              Open-Protocol quick start
-            </div>
-            <h1 className="mt-6 text-balance text-4xl font-bold tracking-tight md:text-6xl">
+            <h1 className="text-balance text-4xl font-bold tracking-tight md:text-6xl">
               Explore or create a developer community on budabit.club.
             </h1>
             <p className="mx-auto mt-6 max-w-3xl text-pretty text-base text-muted-foreground md:text-lg">
-              No setup manual is needed to begin. BudaBit starts as a community network: enter the app, find people building around software, curate useful context, and use Nostr to make coordination verifiable and portable.
+              No setup manual is needed to begin. BudaBit starts as a community network: enter the app and start connecting, curating, and discussing.
             </p>
-            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <Button
-                asChild
-                size="lg"
-                className="h-14 rounded-2xl bg-primary px-8 text-base font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:scale-[1.02] hover:bg-primary/90 hover:shadow-xl hover:shadow-primary/30"
-              >
-                <a href={BUDABIT_COMMUNITY_URL} target="_blank" rel="noopener noreferrer">
-                  <ExternalLink className="mr-2 h-5 w-5" />
-                  Visit budabit.club
-                </a>
-              </Button>
-              <Button
-                asChild
-                variant="outline"
-                size="lg"
-                className="h-14 rounded-2xl border-primary/40 bg-primary/10 px-8 text-base font-semibold text-primary transition-all hover:scale-[1.02] hover:border-primary/60 hover:bg-primary/15"
-              >
-                <a href="#optional-infrastructure">Optional infrastructure</a>
-              </Button>
-            </div>
           </section>
 
           <section className="mx-auto mt-12 grid max-w-6xl gap-4 md:grid-cols-2">
@@ -192,7 +168,7 @@ export default function QuickStart() {
                   Add relays and media servers when your community needs them.
                 </h2>
                 <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                  You do not need to run infrastructure to start. Communities can grow inside budabit.club first, then add relay and Blossom choices when persistence, redundancy, or self-operation becomes important.
+                  You do not need to run infrastructure to start. Communities can grow on public relays first, then add your own infrastructure for more sovereignty as you go.
                 </p>
               </div>
 
@@ -209,6 +185,19 @@ export default function QuickStart() {
               </div>
             </div>
           </section>
+
+          <div className="mt-10 flex justify-center">
+            <Button
+              asChild
+              size="lg"
+              className="h-14 rounded-2xl bg-primary px-8 text-base font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:scale-[1.02] hover:bg-primary/90 hover:shadow-xl hover:shadow-primary/30"
+            >
+              <a href={BUDABIT_COMMUNITY_URL} target="_blank" rel="noopener noreferrer">
+                <ExternalLink className="mr-2 h-5 w-5" />
+                Visit budabit.club
+              </a>
+            </Button>
+          </div>
         </div>
       </main>
 
