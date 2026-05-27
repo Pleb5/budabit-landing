@@ -30,7 +30,7 @@ const pillars = [
     imageAlt: 'BudaBit community curation interface for collecting durable project knowledge.',
     label: 'Community Curation',
     title: 'Curate and ship software together',
-    description: 'Communities can curate important knowledge into a durable treasure trove of information. Curation becomes a signed, reviewable part of the community instead of private lists trapped faceless services.',
+    description: 'Communities can curate important knowledge into a durable treasure trove of information. Curation becomes a signed, reviewable part of the community instead of private lists trapped in faceless services.',
     details: [
       'Community collections for important development context',
       'Information can be targeted to communities without duplicating it',
